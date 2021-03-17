@@ -1,0 +1,36 @@
+.navigation {
+    position: absolute;
+    width: 100%;
+    background-color: #7B002C;
+
+}
+
+.navigationList {
+    
+    float: right;
+    vertical-align: bottom;
+    margin-bottom: 0px;
+}
+
+.navigationItem {
+    display: inline;
+    margin: 10px;
+    padding: 5px 10px;
+    list-style-type: none;
+    text-align: center;
+}
+
+.navigationItem > a {
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+}
+
+.h3 {
+    color: white;
+    display: inline;
+    vertical-align: bottom;
+    margin: 10px;
+    margin-bottom: 0px;
+    position: absolute;
+}
