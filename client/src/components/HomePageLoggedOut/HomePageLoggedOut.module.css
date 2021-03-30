@@ -1,0 +1,36 @@
+.loggedOutMain {
+    background-color: rgba(0, 0, 0, 0.7);
+    
+    position: fixed;
+    top: 2em;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+    padding: 5em;
+}
+
+.loggedOutInner {
+    display: table;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+}
+
+.welcome{
+    margin: 2rem;
+}
+
+.welcome > p:first-child {
+    font-family: 'Brush Script MT', 'Brush Script Std', cursive;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.homeRegister button, .homeLogin button{
+    background-color: #419128;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    padding: 0.5em 1rem;
+}
