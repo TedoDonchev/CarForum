@@ -1,0 +1,33 @@
+.aboutUs {
+    padding: 2em;
+    text-align: center;
+}
+
+.aboutUsMain {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+    padding: 3em;
+    text-align: justify;
+}
+
+.imgAboutDiv {
+    display: inline-block;
+    width: 100%; 
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    
+}
+
+.imgAbout {
+    max-width: 100%;
+    border-radius: 5em;
+}
+
+.aboutText {
+    margin: 0;
+    padding: 1em;
+}
+
+

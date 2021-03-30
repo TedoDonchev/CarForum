@@ -1,9 +1,10 @@
 .header {
     background-color: #419128;
     width: 100%;
-    position: static;
+    position: fixed;
     display: grid;
     grid-template-columns: 0.3fr 1.7fr;
+    z-index: 300;
 }
 
 .navigationBar {
@@ -18,7 +19,7 @@
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 
 }
 
@@ -39,6 +40,7 @@
     padding: 0;
     margin: 0 auto;
     color: white;
+    font-family: 'Brush Script MT', 'Brush Script Std', cursive;
 }
 
 /* .headerImage{

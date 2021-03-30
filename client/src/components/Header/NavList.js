@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 const NavList = () => {
     return (
         <ul className={styles.userList}>
+            <li className={styles.navItem}><Link to='/'>Home</Link></li>
             <li className={styles.navItem}><Link to='/about'>About Us</Link></li>
             <li className={styles.navItem}><Link to='/'>Contact Us</Link></li>
             <li className={styles.navItem}><Link to='/'>Register</Link></li>

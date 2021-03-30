@@ -6,7 +6,7 @@ import NavigationBar from './NavigationBar';
 const Header = () => {
     return (
         <div className={styles.header}>
-            <h2 className={styles.h2}>CarShop</h2>
+            <h2 className={styles.h2}>Flash Auto</h2>
             <NavigationBar />
             {/* <img src={image} className={styles.headerImage} alt="BMW"></img> */}
         </div>
