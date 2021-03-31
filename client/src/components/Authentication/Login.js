@@ -1,10 +1,10 @@
-import styles from '../Register/Register.module.css';
+import styles from '../Authentication/Register.module.css';
 
-const Register = () => {
+const Login = () => {
     return (
         <div className={styles.register}>
             <div className={styles.registerInner}>
-                <h1>Register</h1>
+                <h1>Login</h1>
                 <form className={styles.registerForm} method='POST'>
                     <label for='name'>Username</label>
                     <input type='text' name='username' />
@@ -12,14 +12,11 @@ const Register = () => {
                     <label for='password'>Password</label>
                     <input type='password' name='password' />
                     
-                    <label for='passwordConfirm'>Confirm Password</label>
-                    <input type='password' name='passwordConfirm' />
-                    
-                    <input type='submit' value='Register' className={styles.registerSubmit} />
+                    <input type='submit' value='Login' className={styles.registerSubmit} />
                 </form>
             </div>
         </div>
     )
 }
 
-export default Register;
+export default Login;
