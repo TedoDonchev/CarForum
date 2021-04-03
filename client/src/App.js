@@ -5,11 +5,15 @@ import HomeLoggedOut from './components/HomePageLoggedOut/HomePageLoggedOut';
 import About from './components/About/About';
 import Register from './components/Authentication/Register';
 import Login from './components/Authentication/Login';
+import Home from './components/HomePage/Home';
+
 
 import styles from './App.css';
 
 
 function App() {
+
+
     return (
         <div className={styles.pageDiv}>
 
@@ -19,6 +23,8 @@ function App() {
                 <Route path='/about' exact component={About}></Route>
                 <Route path='/register' exact component={Register}></Route>
                 <Route path='/login' exact component={Login}></Route>
+                <Route path='/home' exact component={Home}></Route>
+
 
             </Switch>
 

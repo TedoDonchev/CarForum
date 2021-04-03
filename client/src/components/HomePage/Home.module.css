@@ -1,0 +1,11 @@
+.homeWrapper{
+    background-color: white;
+    
+    position: fixed;
+    top: 1.95em;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+    padding: 5em;
+}
