@@ -3,9 +3,6 @@ import styles from '../HomePage/Home.module.css';
 
 
 class Home extends React.Component {
-    constructor(props) {
-        super(props)
-    }
 
     state = {
         articles: [],

@@ -1,6 +1,7 @@
 import { Route, Link, NavLink, Redirect, Switch } from 'react-router-dom';
 
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 import HomeLoggedOut from './components/HomePageLoggedOut/HomePageLoggedOut';
 import About from './components/About/About';
 import Register from './components/Authentication/Register';
@@ -27,6 +28,7 @@ function App() {
 
 
             </Switch>
+            <Footer />
 
         </div>
     );
