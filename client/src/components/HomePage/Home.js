@@ -3,13 +3,18 @@ import styles from '../HomePage/Home.module.css';
 
 
 class Home extends React.Component {
-
-    state = {
-        articles: [],
+    constructor(props) {
+        super(props);
+        
+        this.state = {
+            articles: [],
+        }
     }
 
+    
+
     getArticles = async () => {
-        const url = 'http://localhost:4000';
+        const url = 'http://localhost:4000/article';
         const promise = await fetch(url);
         const articles = await promise.json();
 

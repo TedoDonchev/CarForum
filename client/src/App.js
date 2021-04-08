@@ -1,4 +1,5 @@
 import { Route, Link, NavLink, Redirect, Switch } from 'react-router-dom';
+import React from 'react';
 
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -9,29 +10,40 @@ import Login from './components/Authentication/Login';
 import Home from './components/HomePage/Home';
 
 
-import styles from './App.css';
 
 
-function App() {
 
+class  App extends React.Component {
+    constructor(props) {
+        super(props);
 
-    return (
-        <div className={styles.pageDiv}>
+        this.state = {
+            loggedIn: null,
+            username: null
+        }
+    }
+    
 
-            <Header />
-            <Switch>
-                <Route path='/' exact component={HomeLoggedOut}></Route>
-                <Route path='/about' exact component={About}></Route>
-                <Route path='/register' exact component={Register}></Route>
-                <Route path='/login' exact component={Login}></Route>
-                <Route path='/home' exact component={Home}></Route>
-
-
-            </Switch>
-            <Footer />
-
-        </div>
-    );
+    render() {
+        return (
+            <div>
+    
+                <Header />
+                <Switch>
+                    <Route path='/' exact component={HomeLoggedOut}></Route>
+                    <Route path='/about' exact component={About}></Route>
+                    <Route path='/register' exact component={Register}></Route>
+                    <Route path='/login' exact component={Login}></Route>
+                    <Route path='/home' exact component={Home}></Route>
+    
+    
+                </Switch>
+                <Footer />
+    
+            </div>
+        );
+    }
+    
 }
 
 export default App;
