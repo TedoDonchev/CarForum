@@ -8,42 +8,82 @@ import About from './components/About/About';
 import Register from './components/Authentication/Register';
 import Login from './components/Authentication/Login';
 import Home from './components/HomePage/Home';
+import Logout from './components/Authentication/Logout';
 
 
 
 
-
-class  App extends React.Component {
+class App extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            loggedIn: null,
+            loggedIn: false,
             username: null
         }
     }
+
+    isLogged = () => {
+        const token = localStorage.getItem('jwt');
+        const username = localStorage.getItem('username');
+
+        if (token && username) {
+            this.setState({ username: username, loggedIn: true });
+        }
+    }
+
+    logout = () => {
+        this.setState({
+            loggedIn: null, 
+            username: null
+        })
+    }
+
     
+    componentDidMount() {
+        this.isLogged();
+    }
 
     render() {
-        return (
-            <div>
-    
-                <Header />
-                <Switch>
-                    <Route path='/' exact component={HomeLoggedOut}></Route>
-                    <Route path='/about' exact component={About}></Route>
-                    <Route path='/register' exact component={Register}></Route>
-                    <Route path='/login' exact component={Login}></Route>
-                    <Route path='/home' exact component={Home}></Route>
-    
-    
-                </Switch>
-                <Footer />
-    
-            </div>
-        );
+        {
+            if (this.state.loggedIn) {
+                return (
+                    <div>
+                        <Header checkLogin={this.state}/>
+                        <Switch>
+
+                            <Route path='/' exact component={Home}></Route>
+                            <Route path='/about' exact component={About}></Route>
+                            <Route path='/logout' exact component={() => (<Logout logout={this.logout} />)}></Route>
+
+                        </Switch>
+                        <Footer />
+                    </div>
+                )
+            } else {
+                return (
+                    <div>
+        
+                        <Header checkLogin={this.state}/>
+                        <Switch>
+        
+                            <Route path='/' exact component={HomeLoggedOut}></Route>
+                            <Route path='/about' exact component={About}></Route>
+                            <Route path='/register' exact component={() => (<Register checkLogin={this.isLogged} />)}></Route>
+                            <Route path='/login' exact component={() => (<Login checkLogin={this.isLogged} />)} ></Route>
+                            {/* <Route path='/home' exact component={Home}></Route> */}
+ 
+                        </Switch>
+                        <Footer />
+        
+                    </div>
+                );
+            }
+        }
+
+       
     }
-    
+
 }
 
 export default App;

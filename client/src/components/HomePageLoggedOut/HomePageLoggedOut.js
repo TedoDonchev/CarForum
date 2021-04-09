@@ -11,7 +11,7 @@ const HomeLoggedOut = () => {
                     <p>This forum is for car lovers!</p>
                 </div>
                 <div className={styles.homeRegister}>
-                    <p>To use the shop register here</p>
+                    <p>To use the forum register here</p>
                     <Link to='/register'><button>Register</button></Link>
                 </div>
                 <div className={styles.homeLogin}>

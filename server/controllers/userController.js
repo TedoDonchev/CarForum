@@ -6,29 +6,33 @@ const { SECRET, COOKIE_NAME } = require('../config/config');
 
 router.post('/register', async (req, res) => {
 
-    let username = req.body.username;
-    let password = req.body.password;
-    let passwordConfirm = req.body.passwordConfirm;
+   
+    const {username, password, passwordConfirm} = req.body;
+
+    let existingUser = await User.findOne({ username });
+    if(existingUser) {
+        return res.status(200).json({message: 'User already exists!'});
+    }
 
     if (password != passwordConfirm) {
-        res.send(JSON.stringify({errorMsg: 'Passwords should match!'}))
+        res.send(JSON.stringify({message: 'Passwords should match!'}))
     } else {
         let user = new User({username, password});
         user.save();
-
-        res.send(JSON.stringify(user));
+        
+        const token = jwt.sign({_id: user._id, username: user.username}, SECRET);
+        res.status(200).header('Authorization', 'Bearer '+ token).json({ user, token});
+        //res.send(JSON.stringify(user));
     }
 
 })
 
 router.post('/login', async (req, res) => {
 
-    let username = req.body.username;
-    let password = req.body.password;
-
-    //res.cookie('suraikata', '5436');
+    const { username, password } = req.body;
     
-    let user = await User.findOne({username});
+    
+    let user = await User.findOne({ username });
     if(!user) {
         res.send(JSON.stringify("User doesn't exist!"))
     }
@@ -38,12 +42,9 @@ router.post('/login', async (req, res) => {
         res.send(JSON.stringify("Wrong Password!"));
     } else {
         
-        let token = jwt.sign({_id: user._id, username: user.username}, SECRET);
-        res.cookie(COOKIE_NAME , token, {httpOnly: true, secure: false}).json({user});
-        //console.log(res.cookie(COOKIE_NAME , token, {httpOnly: true}));
-        
-        //res.cookie('suraikata', '5436');
+        const token = jwt.sign({_id: user._id, username: user.username}, SECRET);
 
+        res.status(200).header('Authorization', 'Bearer '+ token).json({ user, token});
     }
 
    

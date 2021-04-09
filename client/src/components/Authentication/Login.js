@@ -1,6 +1,6 @@
 import styles from '../Authentication/Register.module.css';
 import { Component } from 'react';
-
+import { Redirect } from 'react-router-dom';
 
 
 class Login extends Component {
@@ -8,7 +8,7 @@ class Login extends Component {
         super(props)
 
         this.state = {
-            username: '',
+            redirect: false,
         }
     }
 
@@ -31,13 +31,22 @@ class Login extends Component {
         });
         
         const response = await promise.json();
-        console.log(response);
-        this.setState({
-            username: response.user.username
-        })
+        //console.log(response);
+        localStorage.setItem('jwt', response.token);
+        localStorage.setItem('username', response.user.username);
+        
+        //console.log(this.props);
+        this.setState({redirect: true});
+        this.props.checkLogin();
+        
     }
 
     render() {
+        {
+            if(this.state.redirect) {
+                return <Redirect to="/"/>
+            }
+        }
         return (
             <div className={styles.register}>
                 <div className={styles.registerInner}>

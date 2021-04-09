@@ -13,34 +13,34 @@ class Home extends React.Component {
 
     
 
-    getArticles = async () => {
-        const url = 'http://localhost:4000/article';
-        const promise = await fetch(url);
-        const articles = await promise.json();
+    // getArticles = async () => {
+    //     const url = 'http://localhost:4000/article';
+    //     const promise = await fetch(url);
+    //     const articles = await promise.json();
 
-        this.setState({ articles: articles });
+    //     this.setState({ articles: articles });
 
-    }
+    // }
 
 
-    async componentDidMount() {
-        await this.getArticles();
-        console.log(this.state);
-    }
+    // async componentDidMount() {
+    //     await this.getArticles();
+    //     console.log(this.state);
+    // }
 
-    renderArticles = () => {
-        const { articles } = this.state;
-        return articles.map(x => {
-            return (
-                <div>
-                    <p>{x.title}</p>
-                    <p>{x.text}</p>
-                    <p>{x.author}</p>
+    // renderArticles = () => {
+    //     const { articles } = this.state;
+    //     return articles.map(x => {
+    //         return (
+    //             <div>
+    //                 <p>{x.title}</p>
+    //                 <p>{x.text}</p>
+    //                 <p>{x.author}</p>
 
-                </div>
-            )
-        })
-    }
+    //             </div>
+    //         )
+    //     })
+    // }
 
 
 
@@ -48,7 +48,8 @@ class Home extends React.Component {
     render() {
         return (
             <div className={styles.homeWrapper}>
-                {this.renderArticles()}
+                {/* {this.renderArticles()} */}
+                <h1>Hoooooooooooooome</h1>
             </div>
         )
     }
