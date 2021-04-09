@@ -4,6 +4,11 @@
     
 }
 
+.aboutUs h1 {
+    font-family: 'Brush Script MT', 'Brush Script Std', cursive;
+    margin-bottom: 0;
+}
+
 .aboutUsMain {
     display: grid;
     grid-template-columns: 1fr 1fr;

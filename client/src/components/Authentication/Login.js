@@ -53,10 +53,10 @@ class Login extends Component {
                     <h1>Login</h1>
                     <form className={styles.registerForm} onSubmit={this.handleLogin}>
                         <label for='username'>Username</label>
-                        <input type='text' name='username' id='username' />
+                        <input type='text' name='username' id='username' className={styles.input} />
                         
                         <label for='password'>Password</label>
-                        <input type='password' name='password' id='password' />
+                        <input type='password' name='password' id='password' className={styles.input} />
                         
                         <input type='submit' value='Login' className={styles.registerSubmit} />
                     </form>

@@ -7,7 +7,7 @@ const HomeLoggedOut = () => {
         <div className={styles.loggedOutMain}>
             <div className={styles.loggedOutInner}>
                 <div className={styles.welcome}>
-                    <p>Welcome to our site!</p>
+                    <h1>Welcome to <Link className={styles.homePageH1Link} to='/'>Flash Auto!</Link></h1>
                     <p>This forum is for car lovers!</p>
                 </div>
                 <div className={styles.homeRegister}>
@@ -15,7 +15,7 @@ const HomeLoggedOut = () => {
                     <Link to='/register'><button>Register</button></Link>
                 </div>
                 <div className={styles.homeLogin}>
-                    <p>Already have and account?</p>
+                    <p>Already have an account?</p>
                     <Link to='/login'><button>Login</button></Link>
                 </div>
             </div>

@@ -64,13 +64,13 @@ class Register extends React.Component {
                     </div> */}
                     <form className={styles.registerForm} onSubmit={this.handleRegister}>
                         <label for='username'>Username</label>
-                        <input type='text' name='username' id='username' />
+                        <input type='text' name='username' id='username' className={styles.input} />
 
                         <label for='password'>Password</label>
-                        <input type='password' name='password' id='password' />
+                        <input type='password' name='password' id='password' className={styles.input} />
 
                         <label for='passwordConfirm'>Confirm Password</label>
-                        <input type='password' name='passwordConfirm' id='passwordConfirm' />
+                        <input type='password' name='passwordConfirm' id='passwordConfirm' className={styles.input} />
 
                         <input type='submit' value='Register' className={styles.registerSubmit} />
                     </form>

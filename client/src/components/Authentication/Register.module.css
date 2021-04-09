@@ -12,8 +12,14 @@
 
 .registerInner {
     width: 50%;
+    margin-left: 25%;
     margin: 0 auto;
     text-align: center;
+}
+
+.registerInner h1 {
+    font-family: 'Brush Script MT', 'Brush Script Std', cursive;
+    margin-bottom: 0;
 }
 
 .registerForm {
@@ -23,12 +29,42 @@
     padding: 1em;
 }
 
-.registerForm > label{
-    padding-top: 1em;
+.registerForm > label {
+    margin-top: 1em;
 }
 
 .registerSubmit {
     margin-top: 1em;
+    margin-left: 35%;
+    background-color: #419128;
+    color: white;
+    border: 1px solid white;
+    border-radius: 50px;
+    width: 30%;
+    padding: 2px 0;
+}
+
+.registerSubmit:hover {
+    background-color: white;
+    color: #419128;
+    border: 1px solid #419128;
+    
+}
+
+.input {
+    border: 2px solid white;
+    border-radius: 50px;
+    width: 70%;
+    margin-left: 15%;
+}
+
+.input:focus {
+    outline: none;
+    
+    border: 2px solid #419128;
+    border-radius: 50px;
+    width: 70%;
+    margin-left: 15%;
 }
 
 /* .errorDiv {

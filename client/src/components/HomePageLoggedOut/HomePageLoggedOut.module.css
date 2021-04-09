@@ -21,10 +21,15 @@
     margin: 2rem;
 }
 
-.welcome > p:first-child {
+.welcome > h1 {
     font-family: 'Brush Script MT', 'Brush Script Std', cursive;
     font-size: 2rem;
     margin: 0;
+}
+
+.homePageH1Link {
+    color: white;
+    text-decoration-thickness: 2px;
 }
 
 .homeRegister button, .homeLogin button{
@@ -33,4 +38,10 @@
     border-radius: 5px;
     color: white;
     padding: 0.5em 1rem;
+}
+
+.homeRegister button:hover, .homeLogin button:hover {
+    background-color: white;
+    color: #419128;
+    border: 1px solid #419128;
 }
