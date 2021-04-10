@@ -7,11 +7,18 @@ const articleSchema = new mongoose.Schema({
     text: {
         type: String,
     },
-    author: {
+    carBrand: {
         type: String,
-        // type: mongoose.Types.ObjectId,
-        // ref: 'User',
-    }
+    },
+    authorName: {
+        type: String,
+    },
+    authorId: {
+        //type: String,
+        type: mongoose.Types.ObjectId,
+        ref: 'User',
+    },
+    comments: []
 
 });
 

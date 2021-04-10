@@ -1,58 +1,73 @@
 import React from 'react';
 import styles from '../HomePage/Home.module.css';
+import Article from '../Article/Article';
+//import { Route, Switch } from 'react-router-dom';
+//import Details from '../Article/Details';
 
 
 class Home extends React.Component {
     constructor(props) {
         super(props);
-        
+
         this.state = {
             articles: [],
         }
     }
 
-    
-
-    // getArticles = async () => {
-    //     const url = 'http://localhost:4000/article';
-    //     const promise = await fetch(url);
-    //     const articles = await promise.json();
-
-    //     this.setState({ articles: articles });
-
-    // }
 
 
-    // async componentDidMount() {
-    //     await this.getArticles();
-    //     console.log(this.state);
-    // }
+    getArticles = async () => {
+        const url = 'http://localhost:4000/articles';
+        const promise = await fetch(url);
+        const articles = await promise.json();
 
-    // renderArticles = () => {
-    //     const { articles } = this.state;
-    //     return articles.map(x => {
-    //         return (
-    //             <div>
-    //                 <p>{x.title}</p>
-    //                 <p>{x.text}</p>
-    //                 <p>{x.author}</p>
+        //console.log(articles);
+        this.setState({ articles });
+        //console.log(this.state);
+    }
 
-    //             </div>
-    //         )
-    //     })
-    // }
+
+    componentDidMount() {
+        this.getArticles();
+
+    }
+
+    renderArticles = () => {
+        const { articles } = this.state;
+        //console.log(this.match);
+        return articles.map(x => {
+            return (
+                <Article key={x._id} title={x.title} carBrand={x.carBrand} authorName={x.authorName} _id={x._id} />
+            )
+        })
+    }
 
 
 
 
     render() {
-        return (
-            <div className={styles.homeWrapper}>
-                {/* {this.renderArticles()} */}
-                <h1>Hoooooooooooooome</h1>
-            </div>
-        )
+        {
+            if (this.state.articles.length < 1) {
+                return (
+                    <div className={styles.homeWrapper}>
+                        <h1 className={styles.homeH1}>Dashboard</h1>
+                        <p>Oops, it looks like there are no articles in out database currently!</p>
+                    </div>
+                )
+            } else {
+                return (
+                    <div className={styles.homeWrapper}>
+                        <h1 className={styles.homeH1}>Dashboard</h1>
+                        <div className={styles.articleWrapper}>
+                            {this.renderArticles()}
+                        </div>
+                    </div>
+                )
+            }
+        }
+
     }
+
 
 }
 

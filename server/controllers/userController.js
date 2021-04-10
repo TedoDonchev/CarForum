@@ -47,8 +47,6 @@ router.post('/login', async (req, res) => {
         res.status(200).header('Authorization', 'Bearer '+ token).json({ user, token});
     }
 
-   
-    
 })
 
 

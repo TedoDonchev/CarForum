@@ -40,6 +40,7 @@ class Register extends React.Component {
 
         localStorage.setItem('jwt', response.token);
         localStorage.setItem('username', response.user.username);
+        localStorage.setItem('userId', response.user._id);
 
         this.setState({ redirect: true });
         this.props.checkLogin();
@@ -50,7 +51,7 @@ class Register extends React.Component {
         
         {
             if(this.state.redirect) {
-                return <Redirect to="/"/>
+                return <Redirect to="/" />
             }
         }
  

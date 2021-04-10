@@ -34,6 +34,8 @@ class Login extends Component {
         //console.log(response);
         localStorage.setItem('jwt', response.token);
         localStorage.setItem('username', response.user.username);
+        localStorage.setItem('userId', response.user._id);
+
         
         //console.log(this.props);
         this.setState({redirect: true});
@@ -47,6 +49,7 @@ class Login extends Component {
                 return <Redirect to="/"/>
             }
         }
+        
         return (
             <div className={styles.register}>
                 <div className={styles.registerInner}>

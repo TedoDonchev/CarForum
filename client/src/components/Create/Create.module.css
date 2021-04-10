@@ -1,4 +1,4 @@
-.register {
+.createWrapper {
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
     position: fixed;
@@ -10,30 +10,46 @@
     padding: 0 5em;
 }
 
-.registerInner {
+.createInner {
     width: 50%;
     margin-left: 25%;
     margin: 0 auto;
     text-align: center;
+
 }
 
-.registerInner h1 {
+.createInner h1 {
     font-family: 'Brush Script MT', 'Brush Script Std', cursive;
     margin-bottom: 0;
 }
 
-.registerForm {
+.createForm {
     display: grid;
     grid-template-columns: 1fr;
     margin: 1em;
     padding: 1em;
 }
 
-.registerForm > label {
+.createForm > label {
     margin-top: 1em;
 }
 
-.registerSubmit {
+.input, .selectCarBrand {
+    border: 2px solid white;
+    border-radius: 50px;
+    width: 70%;
+    margin-left: 15%;
+}
+
+.input:focus, .selectCarBrand:focus {
+    outline: none;
+    border: 2px solid #419128;
+    border-radius: 50px;
+    width: 70%;
+    margin-left: 15%;
+}
+
+.createSubmit {
     margin-top: 1em;
     margin-left: 35%;
     background-color: #419128;
@@ -44,28 +60,9 @@
     padding: 2px 0;
 }
 
-.registerSubmit:hover {
+.createSubmit:hover {
     background-color: white;
     color: #419128;
     border: 1px solid #419128;
     
 }
-
-.input {
-    border: 2px solid white;
-    border-radius: 50px;
-    width: 70%;
-    margin-left: 15%;
-}
-
-.input:focus {
-    outline: none;
-    border: 2px solid #419128;
-    border-radius: 50px;
-    width: 70%;
-    margin-left: 15%;
-}
-
-/* .errorDiv {
-    display: block;
-} */

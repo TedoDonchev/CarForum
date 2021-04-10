@@ -1,0 +1,14 @@
+.article{ 
+    border: 2px solid #419128;
+    margin: 5px;
+}
+
+.authorCarBrand {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.h3Link {
+    color: white;
+    text-decoration: none;
+}
