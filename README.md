@@ -4,7 +4,7 @@ The forum's main purpouse is to help car lovers interract with each other and sh
 
 ## Starting the project 
 
-Run 'npm install' and then 'npm start' in the 'client' folder to build the app. Port 3000.
+Run 'npm install' and then 'npm start' in the 'client' folder to build the app. Port 3000.  
 Run 'npm install' and then 'npm start' in the 'server' folder to get the server ready. Port 4000.
 
 ## Technologies used
