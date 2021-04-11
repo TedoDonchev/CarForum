@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 
 const Article = (props) => {
-    
+
     return (
         <div className={styles.article}>
             <h3 className={styles.h3}><Link className={styles.h3Link} to={`/articles/${props._id}`}>{props.title}</Link></h3>
@@ -12,8 +12,6 @@ const Article = (props) => {
                 <div className={styles.carBrandDiv}>About: {props.carBrand}</div>
                 <div className={styles.authorDiv}>By: {props.authorName}</div>
             </div>
-            
-            
         </div>
     )
 }

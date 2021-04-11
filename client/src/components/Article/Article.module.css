@@ -1,6 +1,8 @@
 .article{ 
     border: 2px solid #419128;
     margin: 5px;
+    background-color: #E8F0EA;
+    color: black;
 }
 
 .authorCarBrand {
@@ -9,6 +11,11 @@
 }
 
 .h3Link {
-    color: white;
+    color: black;
     text-decoration: none;
+}
+
+.h3Link:hover {
+    color: #419128;
+    text-decoration: underline;
 }

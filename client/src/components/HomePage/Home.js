@@ -51,7 +51,7 @@ class Home extends React.Component {
                 return (
                     <div className={styles.homeWrapper}>
                         <h1 className={styles.homeH1}>Dashboard</h1>
-                        <p>Oops, it looks like there are no articles in out database currently!</p>
+                        <p>Oops, it looks like there are no articles in our database currently!</p>
                     </div>
                 )
             } else {
