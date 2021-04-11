@@ -1,4 +1,4 @@
-### Project information
+# Project information
 
 The forum's main purpouse is to help car lovers interract with each other and share knowledge and ideas about their cars!
 
