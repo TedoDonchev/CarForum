@@ -78,7 +78,7 @@ class Details extends Component {
                     <div className={styles.upperDiv}>
                         <h3>{this.state.title}</h3>
                         <div className={styles.userCarBrand}>
-                            <div>By: {this.state.authorName}</div>
+                            <div>From: {this.state.authorName}</div>
                             <div>About: {this.state.carBrand}</div>
 
                         </div>

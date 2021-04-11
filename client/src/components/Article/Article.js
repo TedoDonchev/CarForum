@@ -10,7 +10,7 @@ const Article = (props) => {
 
             <div className={styles.authorCarBrand}>
                 <div className={styles.carBrandDiv}>About: {props.carBrand}</div>
-                <div className={styles.authorDiv}>By: {props.authorName}</div>
+                <div className={styles.authorDiv}>From: {props.authorName}</div>
             </div>
         </div>
     )

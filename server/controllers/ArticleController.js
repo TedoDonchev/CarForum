@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const Article = require('../models/Article');
-const uniqueId = require('uniqueId');
+
 
 router.post('/create', (req, res) => {
 
@@ -36,8 +36,7 @@ router.post('/comment', async(req, res) => {
     //console.log(req.body);
     const { comment, commentAuthor } = req.body;
 
-    const id = uniqueId();
-    console.log(id)
+    
     // let arr = [];
 
     // let currentArticle = await Article.findOne({_id: req.body._id}, (err, data) => {
@@ -50,7 +49,7 @@ router.post('/comment', async(req, res) => {
     let currentArticle = await Article.findOne({_id: req.body._id});
     //console.log(arr);
     //console.log(arr)
-    currentArticle.comments.push({ id, comment, commentAuthor });
+    currentArticle.comments.push({ comment, commentAuthor });
     //console.log(currentArticle);
     currentArticle.save();
     

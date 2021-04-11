@@ -5,6 +5,13 @@
     margin: 1em 0;
 }
 
-.commentDiv p {
-    margin: 1em 1em;
+.responseDiv p, .authorDiv p {
+    /* margin: 1em 1em; */
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 0;
+}
+
+.authorDiv p {
+    border-bottom: 2px solid #419128;
 }

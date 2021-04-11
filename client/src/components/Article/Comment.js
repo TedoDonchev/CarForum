@@ -3,8 +3,12 @@ import styles from './Comment.module.css';
 const Comment = (props) => {
     return (
         <div className={styles.commentDiv}>
-            <p>{props.comment}</p>
-            <p>{props.commentAuthor}</p>
+            <div className={styles.authorDiv}>
+                <p>From: {props.commentAuthor}</p>
+            </div>
+            <div className={styles.responseDiv}>
+                <p>{props.comment}</p>
+            </div>
         </div>
     )
 }
