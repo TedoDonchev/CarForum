@@ -12,7 +12,6 @@ import Logout from './components/Authentication/Logout';
 import CreateArticle from './components/Create/CreateArticle';
 import Details from './components/Article/Details';
 
-import styles from './App.module.css';
 
 class App extends React.Component {
     constructor(props) {
@@ -49,7 +48,7 @@ class App extends React.Component {
         {
             if (this.state.loggedIn) {
                 return (
-                    <div className={styles.appDiv}>
+                    <div>
                         <Header checkLogin={this.state}/>
                         <Switch>
 
