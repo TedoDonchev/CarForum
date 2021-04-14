@@ -43,12 +43,21 @@ router.post('/login', async (req, res) => {
 
     let areEqual = await bcrypt.compare(password, user.password);      
     if(!areEqual) {
-        return res.send(JSON.stringify({message: 'Incorrect password!'}));
+        res.send(JSON.stringify({message: 'Incorrect password!'}));
     } else {
         
         const token = jwt.sign({_id: user._id, username: user.username}, SECRET);
         return res.status(200).header('Authorization', 'Bearer '+ token).json({ user, token});
     }
+
+})
+
+router.get('/:id', async (req, res) => {
+    const { id } = req.params;
+
+    let user = await User.findOne({ _id: id }).lean();
+    
+    res.send(JSON.stringify(user));
 
 })
 

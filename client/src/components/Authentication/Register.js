@@ -19,7 +19,7 @@ class Register extends React.Component {
         const username = e.target.username.value;
         const password = e.target.password.value;
         const passwordConfirm = e.target.passwordConfirm.value;
-        const imageUrl =  e.target.imageUrl.value;
+        const imageUrl =  e.target.imageUrl.value || 'https://i.stack.imgur.com/34AD2.jpg';
 
 
         const url = 'http://localhost:4000/users/register';

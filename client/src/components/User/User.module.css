@@ -1,0 +1,9 @@
+.imgDiv {
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+.imgDiv img {
+    max-width: 100%;
+    max-height: 100%;
+}

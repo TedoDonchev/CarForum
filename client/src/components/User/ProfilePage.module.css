@@ -1,0 +1,22 @@
+.profileWrapper {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    position: fixed;
+    top: 1.95em;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+    padding: 0 5em;
+
+    text-align: center;
+}
+
+.profileWrapper h1 {
+    font-family: 'Brush Script MT', 'Brush Script Std', cursive;
+}
+
+.profileMain {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}

@@ -32,7 +32,7 @@ class Login extends Component {
         });
 
         const response = await promise.json();
-        console.log(response);
+        //console.log(response);
 
         if (response.message) {
             const errorMessage = response.message;

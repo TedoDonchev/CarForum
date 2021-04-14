@@ -13,8 +13,12 @@ router.post('/create', async (req, res) => {
     article.save();
 
     let user = await User.findOne({_id: authorId});
-    user.articles.push(article);   
-    user.save();
+    // console.log(user);
+    let arr = user.articles
+    arr.push(article);   
+    // console.log(user);
+    //user.save();
+    await User.findOneAndUpdate({_id: authorId}, {articles: arr});
 
     res.status(200).send(JSON.stringify('Article created!'));
 })

@@ -29,7 +29,6 @@ class Home extends React.Component {
 
     componentDidMount() {
         this.getArticles();
-
     }
 
     renderArticles = () => {

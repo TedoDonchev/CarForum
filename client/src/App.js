@@ -11,7 +11,7 @@ import Home from './components/HomePage/Home';
 import Logout from './components/Authentication/Logout';
 import CreateArticle from './components/Create/CreateArticle';
 import Details from './components/Article/Details';
-
+import ProfilePage from './components/User/ProfilePage';
 
 class App extends React.Component {
     constructor(props) {
@@ -57,6 +57,7 @@ class App extends React.Component {
                         <Route path='/logout' exact component={() => (<Logout logout={this.logout} />)}></Route>
                         <Route path='/create' exact component={CreateArticle}></Route>
                         <Route path='/articles/:id' component={Details}></Route>
+                        <Route path='/users/:id' component={ProfilePage}></Route>
 
                     </Switch>
                     <Footer />
