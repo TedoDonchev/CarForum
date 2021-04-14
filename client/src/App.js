@@ -1,4 +1,4 @@
-import { Route, Link, NavLink, Redirect, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import React from 'react';
 
 import Header from './components/Header/Header';
@@ -34,53 +34,53 @@ class App extends React.Component {
 
     logout = () => {
         this.setState({
-            loggedIn: null, 
+            loggedIn: null,
             username: null
         })
     }
 
-    
+
     componentDidMount() {
         this.isLogged();
     }
 
     render() {
-        {
-            if (this.state.loggedIn) {
-                return (
-                    <div>
-                        <Header checkLogin={this.state}/>
-                        <Switch>
 
-                            <Route path='/' exact component={Home}></Route>
-                            <Route path='/about' exact component={About}></Route>
-                            <Route path='/logout' exact component={() => (<Logout logout={this.logout} />)}></Route>
-                            <Route path='/create' exact component={CreateArticle}></Route>
-                            <Route path='/articles/:id' component={Details}></Route>
-                            
-                        </Switch>
-                        <Footer />
-                    </div>
-                )
-            } else {
-                return (
-                    <div>
-        
-                        <Header checkLogin={this.state}/>
-                        <Switch>
-        
-                            <Route path='/' exact component={HomeLoggedOut}></Route>
-                            <Route path='/about' exact component={About}></Route>
-                            <Route path='/register' exact component={() => (<Register checkLogin={this.isLogged} />)}></Route>
-                            <Route path='/login' exact component={() => (<Login checkLogin={this.isLogged} />)} ></Route>
- 
-                        </Switch>
-                        <Footer />
-        
-                    </div>
-                );
-            }
-        } 
+        if (this.state.loggedIn) {
+            return (
+                <div>
+                    <Header checkLogin={this.state} />
+                    <Switch>
+
+                        <Route path='/' exact component={Home}></Route>
+                        <Route path='/about' exact component={About}></Route>
+                        <Route path='/logout' exact component={() => (<Logout logout={this.logout} />)}></Route>
+                        <Route path='/create' exact component={CreateArticle}></Route>
+                        <Route path='/articles/:id' component={Details}></Route>
+
+                    </Switch>
+                    <Footer />
+                </div>
+            )
+        } else {
+            return (
+                <div>
+
+                    <Header checkLogin={this.state} />
+                    <Switch>
+
+                        <Route path='/' exact component={HomeLoggedOut}></Route>
+                        <Route path='/about' exact component={About}></Route>
+                        <Route path='/register' exact component={() => (<Register checkLogin={this.isLogged} />)}></Route>
+                        <Route path='/login' exact component={() => (<Login checkLogin={this.isLogged} />)} ></Route>
+
+                    </Switch>
+                    <Footer />
+
+                </div>
+            );
+        }
+
     }
 }
 

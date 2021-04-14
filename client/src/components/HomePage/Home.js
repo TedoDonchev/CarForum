@@ -46,25 +46,25 @@ class Home extends React.Component {
 
 
     render() {
-        {
-            if (this.state.articles.length < 1) {
-                return (
-                    <div className={styles.homeWrapper}>
-                        <h1 className={styles.homeH1}>Dashboard</h1>
-                        <p>Oops, it looks like there are no articles in our database currently!</p>
+
+        if (this.state.articles.length < 1) {
+            return (
+                <div className={styles.homeWrapper}>
+                    <h1 className={styles.homeH1}>Dashboard</h1>
+                    <p>Oops, it looks like there are no articles in our database currently!</p>
+                </div>
+            )
+        } else {
+            return (
+                <div className={styles.homeWrapper}>
+                    <h1 className={styles.homeH1}>Dashboard</h1>
+                    <div className={styles.articleWrapper}>
+                        {this.renderArticles()}
                     </div>
-                )
-            } else {
-                return (
-                    <div className={styles.homeWrapper}>
-                        <h1 className={styles.homeH1}>Dashboard</h1>
-                        <div className={styles.articleWrapper}>
-                            {this.renderArticles()}
-                        </div>
-                    </div>
-                )
-            }
+                </div>
+            )
         }
+
 
     }
 

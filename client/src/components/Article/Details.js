@@ -1,7 +1,7 @@
 import styles from './Details.module.css';
 import { Component } from 'react';
 import Comment from './Comment';
-import { Redirect } from 'react-router-dom';
+//import { Redirect } from 'react-router-dom';
 
 class Details extends Component {
     constructor(props) {

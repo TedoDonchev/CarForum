@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-const { SECRET, SALT_ROUNDS } = require('../config/config');
+const { SALT_ROUNDS } = require('../config/config');
 
 const userSchema = new mongoose.Schema({
     username: {
@@ -12,6 +12,11 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,      
     },
+    imageUrl: {
+        type: String,
+        default: 'https://i.stack.imgur.com/34AD2.jpg',
+    },
+    articles: []
 });
 
 userSchema.pre('save', function (next) {

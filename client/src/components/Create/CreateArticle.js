@@ -41,21 +41,21 @@ class CreateArticle extends Component {
 
 
     render() {
-        {
-            if(this.state.redirect) return <Redirect to="/" />;
-        } 
+        
+        if(this.state.redirect) return <Redirect to="/" />;
+         
         return (
             <div className={styles.createWrapper}>
                 <div className={styles.createInner}>
                     <h1>Create Article</h1>
                     <form className={styles.createForm} onSubmit={this.handleCreate}>
-                        <label for='title'>Title</label>
+                        <label htmlFor='title'>Title</label>
                         <input type='text' name='title' id='title' className={styles.input} />
 
-                        <label for='text'>Text</label>
+                        <label htmlFor='text'>Text</label>
                         <textarea type='text' name='text' id='text' className={styles.input} />
 
-                        <label for='carBrand'>Car Brand</label>
+                        <label htmlFor='carBrand'>Car Brand</label>
                         <select name='carBrand' id='carBrand' className={styles.selectCarBrand}>
                             <option value='Audi'>Audi</option>
                             <option value='BMW'>BMW</option>

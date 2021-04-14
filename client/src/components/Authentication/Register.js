@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../Authentication/Register.module.css';
 import { Redirect } from 'react-router-dom';
-
+import Error from '../Error/Error';
 
 class Register extends React.Component {
     constructor(props) {
@@ -9,8 +9,9 @@ class Register extends React.Component {
 
         this.state = {
             redirect: false,
+            error: null,
         }
-    
+
     }
 
     handleRegister = async (e) => {
@@ -18,60 +19,103 @@ class Register extends React.Component {
         const username = e.target.username.value;
         const password = e.target.password.value;
         const passwordConfirm = e.target.passwordConfirm.value;
+        const imageUrl =  e.target.imageUrl.value;
 
-        
+
         const url = 'http://localhost:4000/users/register';
-        
+
         const promise = await fetch(url, {
             method: 'POST',
             body: JSON.stringify({
                 username,
                 password,
-                passwordConfirm
+                passwordConfirm,
+                imageUrl,
             }),
             headers: {
                 'Content-Type': 'application/json'
             },
         });
-        
+
         const response = await promise.json();
 
         //console.log(response);
 
-        localStorage.setItem('jwt', response.token);
-        localStorage.setItem('username', response.user.username);
-        localStorage.setItem('userId', response.user._id);
+        if (response.message) {
 
-        this.setState({ redirect: true });
-        this.props.checkLogin();
+            const errorMessage = response.message;
+
+            this.setState({ error: errorMessage });
+
+
+        } else {
+            localStorage.setItem('jwt', response.token);
+            localStorage.setItem('username', response.user.username);
+            localStorage.setItem('userId', response.user._id);
+
+            this.setState({ redirect: true });
+            this.props.checkLogin();
+        }
+
 
     }
-    
+
     render() {
-        
-        {
-            if(this.state.redirect) {
-                return <Redirect to="/" />
-            }
+
+
+        if (this.state.redirect) {
+            return <Redirect to="/" />
         }
- 
+
+        if (this.state.error) {
+            return (
+                <div className={styles.register}>
+                    <div className={styles.registerInner}>
+                        <h1>Register</h1>
+                        <Error error={this.state.error} />
+
+                        <form className={styles.registerForm} onSubmit={this.handleRegister}>
+                            <label htmlFor='username'>Username</label>
+                            <input type='text' name='username' id='username' className={styles.input} autoComplete="on" />
+
+                            <label htmlFor='password'>Password</label>
+                            <input type='password' name='password' id='password' className={styles.input} autoComplete="on" />
+
+                            <label htmlFor='passwordConfirm'>Confirm Password</label>
+                            <input type='password' name='passwordConfirm' id='passwordConfirm' className={styles.input} autoComplete="on" />
+                            
+                            <label htmlFor='imageUrl'>Image URL</label>
+                            <input type='text' name='imageUrl' id='imageUrl' className={styles.input} autoComplete="on" />
+                            
+                            <input type='submit' value='Register' className={styles.registerSubmit} />
+                        </form>
+                    </div>
+                </div>
+            )
+
+
+        }
+
         return (
             <div className={styles.register}>
                 <div className={styles.registerInner}>
                     <h1>Register</h1>
-                    
+
                     {/* <div display='none' className={this.state.className}>
                         <p>asdasdasd{this.state.data.errorMsg}</p>
                     </div> */}
                     <form className={styles.registerForm} onSubmit={this.handleRegister}>
-                        <label for='username'>Username</label>
-                        <input type='text' name='username' id='username' className={styles.input} />
+                        <label htmlFor='username'>Username</label>
+                        <input type='text' name='username' id='username' className={styles.input} autoComplete="on" />
 
-                        <label for='password'>Password</label>
-                        <input type='password' name='password' id='password' className={styles.input} />
+                        <label htmlFor='password'>Password</label>
+                        <input type='password' name='password' id='password' className={styles.input} autoComplete="on" />
 
-                        <label for='passwordConfirm'>Confirm Password</label>
-                        <input type='password' name='passwordConfirm' id='passwordConfirm' className={styles.input} />
+                        <label htmlFor='passwordConfirm'>Confirm Password</label>
+                        <input type='password' name='passwordConfirm' id='passwordConfirm' className={styles.input} autoComplete="on" />
+
+                        <label htmlFor='imageUrl'>Image URL</label>
+                        <input type='text' name='imageUrl' id='imageUrl' className={styles.input} autoComplete="on" />
 
                         <input type='submit' value='Register' className={styles.registerSubmit} />
                     </form>
