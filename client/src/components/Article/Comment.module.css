@@ -15,3 +15,7 @@
 .authorDiv p {
     border-bottom: 2px solid #419128;
 }
+
+.responseDiv p {
+    font-size: 18px;
+}

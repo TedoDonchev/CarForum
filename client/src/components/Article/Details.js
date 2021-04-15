@@ -1,7 +1,7 @@
 import styles from './Details.module.css';
 import { Component } from 'react';
 import Comment from './Comment';
-//import { Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 class Details extends Component {
     constructor(props) {
@@ -13,6 +13,8 @@ class Details extends Component {
             comments: [],
             carBrand: '',
             authorName: '',
+            articleId: null,
+            redirect: false,
         }
     }
 
@@ -23,7 +25,7 @@ class Details extends Component {
         const res = await promise.json();
         //return res;
         //console.log(res.comments);
-        this.setState({ title: res.title, text: res.text, comments: res.comments , carBrand: res.carBrand, authorName: res.authorName });
+        this.setState({ title: res.title, text: res.text, comments: res.comments , carBrand: res.carBrand, authorName: res.authorName, articleId: res._id });
     }
 
     // const data = getData();
@@ -64,23 +66,40 @@ class Details extends Component {
         
         const res = await promise.json();
         //console.log(res);
-        this.setState({ title: res.title, text: res.text, comments: res.comments, carBrand: res.carBrand, authorName: res.authorName});
+        this.setState({ title: res.title, text: res.text, comments: res.comments, carBrand: res.carBrand, authorName: res.authorName, articleId: res._id});
         //console.log(this.state);
         e.target.comment.value = '';
     }
 
+    handleDelete = async (e) => {
+        e.preventDefault();
+        const { articleId } = this.state;
+        
+        const promise = await fetch(`http://localhost:4000/articles/delete/${articleId}`);
+
+        const res = await promise.json();
+        console.log(res);
+        this.setState({ redirect: true });
+
+    }
+
     render() {
         //console.log(this.props);
+        if(this.state.redirect) {
+            return <Redirect to='/' />
+        }
+            
         return (
             <div className={styles.detailsWrapper}>
-
                 <div className={styles.articleDiv}>
                     <div className={styles.upperDiv}>
-                        <h3>{this.state.title}</h3>
+                        <div className={styles.titleDiv}>
+                            <h3>{this.state.title}</h3>
+                            {this.state.authorName == localStorage.getItem('username') ? <input type='submit' value='Delete' onClick={this.handleDelete} /> : null}
+                        </div>
                         <div className={styles.userCarBrand}>
                             <div>From: {this.state.authorName}</div>
                             <div>About: {this.state.carBrand}</div>
-
                         </div>
                     </div>
                     <div className={styles.lowerDiv}>

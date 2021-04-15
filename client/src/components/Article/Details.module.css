@@ -21,20 +21,49 @@
     margin: 0 1em;
 }
 
-.upperDiv h3 {
-    margin: 0 auto;
+.titleDiv{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
+
+.titleDiv h3 {
+    margin: 0 auto;
+    margin-left: 0;
+    display: inline-block;
+    font-size: 20px;
+}
+
+.titleDiv input {
+    display: inline;
+    margin-right: 0;
+    margin-left: 85%;
+    margin-top: 5px;
+    width: 15%;
+    background-color: red;
+    color: white ;
+    border: 1px solid black;
+    border-radius: 50px;
+    font-size: 16px;
+}
+
+.titleDiv input:hover {
+    background-color: white;
+    color: red;
+    border: 1px solid red;
+}
+
 
 .userCarBrand {
     display: grid;
     grid-template-columns: 0.1fr 0.1fr;
-    font-size: 10px;
+    font-size: 14px;
     border-bottom: 2px solid #419128;
 }
 
 .lowerDiv {
     margin: 1em 1em;
     text-align: justify;
+    font-size: 18px;
 }
 
 .commentsDiv h3 {

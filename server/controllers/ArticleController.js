@@ -52,5 +52,23 @@ router.post('/comment', async(req, res) => {
     res.status(200).send(JSON.stringify(currentArticle));
 })
 
+router.get('/delete/:id', async (req, res) => {
+
+    const articleId = req.params.id;
+    const article = await Article.findOne({ _id: articleId }).lean();
+    const { authorId } = article;
+    
+    await Article.findOneAndDelete({ _id: articleId });
+    let user = await User.findOne({ _id: authorId });
+    //console.log(user.articles);
+    user.articles.map((article, index) => {
+        if(article._id == articleId) {
+            user.articles.splice(index, 1);
+        }
+    })
+    //console.log(user.articles);
+    await User.findByIdAndUpdate({ _id: authorId }, {articles: user.articles}, { new: true });
+    res.send(JSON.stringify('Article deleted!'));
+})
 
 module.exports = router;
