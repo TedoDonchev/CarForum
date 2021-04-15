@@ -76,16 +76,16 @@ class Register extends React.Component {
 
                         <form className={styles.registerForm} onSubmit={this.handleRegister}>
                             <label htmlFor='username'>Username</label>
-                            <input type='text' name='username' id='username' className={styles.input} autoComplete="on" />
+                            <input type='text' name='username' id='username' className={styles.input} autoComplete="on" placeholder='Username' />
 
                             <label htmlFor='password'>Password</label>
-                            <input type='password' name='password' id='password' className={styles.input} autoComplete="on" />
+                            <input type='password' name='password' id='password' className={styles.input} autoComplete="on"  placeholder='Password' />
 
                             <label htmlFor='passwordConfirm'>Confirm Password</label>
-                            <input type='password' name='passwordConfirm' id='passwordConfirm' className={styles.input} autoComplete="on" />
+                            <input type='password' name='passwordConfirm' id='passwordConfirm' className={styles.input} autoComplete="on" placeholder='Confirm Password' />
                             
-                            <label htmlFor='imageUrl'>Image URL</label>
-                            <input type='text' name='imageUrl' id='imageUrl' className={styles.input} autoComplete="on" />
+                            <label htmlFor='imageUrl'>Profile Picture</label>
+                            <input type='text' name='imageUrl' id='imageUrl' className={styles.input} autoComplete="on" placeholder='Profile Picture' />
                             
                             <input type='submit' value='Register' className={styles.registerSubmit} />
                         </form>
@@ -106,16 +106,16 @@ class Register extends React.Component {
                     </div> */}
                     <form className={styles.registerForm} onSubmit={this.handleRegister}>
                         <label htmlFor='username'>Username</label>
-                        <input type='text' name='username' id='username' className={styles.input} autoComplete="on" />
+                        <input type='text' name='username' id='username' className={styles.input} autoComplete="on" placeholder='Username' />
 
                         <label htmlFor='password'>Password</label>
-                        <input type='password' name='password' id='password' className={styles.input} autoComplete="on" />
+                        <input type='password' name='password' id='password' className={styles.input} autoComplete="on" placeholder='Password' />
 
                         <label htmlFor='passwordConfirm'>Confirm Password</label>
-                        <input type='password' name='passwordConfirm' id='passwordConfirm' className={styles.input} autoComplete="on" />
+                        <input type='password' name='passwordConfirm' id='passwordConfirm' className={styles.input} autoComplete="on" placeholder='Confirm Password' />
 
                         <label htmlFor='imageUrl'>Image URL</label>
-                        <input type='text' name='imageUrl' id='imageUrl' className={styles.input} autoComplete="on" />
+                        <input type='text' name='imageUrl' id='imageUrl' className={styles.input} autoComplete="on" placeholder='Profile Picture' />
 
                         <input type='submit' value='Register' className={styles.registerSubmit} />
                     </form>

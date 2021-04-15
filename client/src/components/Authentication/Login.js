@@ -68,10 +68,10 @@ class Login extends Component {
                         <Error error={this.state.error} />
                         <form className={styles.registerForm} onSubmit={this.handleLogin}>
                             <label htmlFor='username'>Username</label>
-                            <input type='text' name='username' id='username' className={styles.input} />
+                            <input type='text' name='username' id='username' className={styles.input} placeholder='Username' />
 
                             <label htmlFor='password'>Password</label>
-                            <input type='password' name='password' id='password' className={styles.input} />
+                            <input type='password' name='password' id='password' className={styles.input} placeholder='Password' />
 
                             <input type='submit' value='Login' className={styles.registerSubmit} />
                         </form>
@@ -87,10 +87,10 @@ class Login extends Component {
                     <h1>Login</h1>
                     <form className={styles.registerForm} onSubmit={this.handleLogin}>
                         <label htmlFor='username'>Username</label>
-                        <input type='text' name='username' id='username' className={styles.input} />
+                        <input type='text' name='username' id='username' className={styles.input}  placeholder='Username' />
 
                         <label htmlFor='password'>Password</label>
-                        <input type='password' name='password' id='password' className={styles.input} />
+                        <input type='password' name='password' id='password' className={styles.input}  placeholder='Password'/>
 
                         <input type='submit' value='Login' className={styles.registerSubmit} />
                     </form>

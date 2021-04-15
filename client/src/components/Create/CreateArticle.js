@@ -50,10 +50,10 @@ class CreateArticle extends Component {
                     <h1>Create Article</h1>
                     <form className={styles.createForm} onSubmit={this.handleCreate}>
                         <label htmlFor='title'>Title</label>
-                        <input type='text' name='title' id='title' className={styles.input} />
+                        <input type='text' name='title' id='title' className={styles.input} placeholder='Title' />
 
                         <label htmlFor='text'>Text</label>
-                        <textarea type='text' name='text' id='text' className={styles.input} />
+                        <textarea type='text' name='text' id='text' className={styles.input} placeholder='Description' />
 
                         <label htmlFor='carBrand'>Car Brand</label>
                         <select name='carBrand' id='carBrand' className={styles.selectCarBrand}>
