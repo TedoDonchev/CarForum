@@ -68,30 +68,30 @@ class Register extends React.Component {
         }
 
         if (this.state.error) {
-            return (
-                <div className={styles.register}>
-                    <div className={styles.registerInner}>
-                        <h1>Register</h1>
-                        <Error error={this.state.error} />
+            // return (
+            //     <div className={styles.register}>
+            //         <div className={styles.registerInner}>
+            //             <h1>Register</h1>
+            //             <Error error={this.state.error} />
 
-                        <form className={styles.registerForm} onSubmit={this.handleRegister}>
-                            <label htmlFor='username'>Username</label>
-                            <input type='text' name='username' id='username' className={styles.input} autoComplete="on" placeholder='Username' />
+            //             <form className={styles.registerForm} onSubmit={this.handleRegister}>
+            //                 <label htmlFor='username'>Username</label>
+            //                 <input type='text' name='username' id='username' className={styles.input} autoComplete="on" placeholder='Username' />
 
-                            <label htmlFor='password'>Password</label>
-                            <input type='password' name='password' id='password' className={styles.input} autoComplete="on"  placeholder='Password' />
+            //                 <label htmlFor='password'>Password</label>
+            //                 <input type='password' name='password' id='password' className={styles.input} autoComplete="on"  placeholder='Password' />
 
-                            <label htmlFor='passwordConfirm'>Confirm Password</label>
-                            <input type='password' name='passwordConfirm' id='passwordConfirm' className={styles.input} autoComplete="on" placeholder='Confirm Password' />
+            //                 <label htmlFor='passwordConfirm'>Confirm Password</label>
+            //                 <input type='password' name='passwordConfirm' id='passwordConfirm' className={styles.input} autoComplete="on" placeholder='Confirm Password' />
                             
-                            <label htmlFor='imageUrl'>Profile Picture</label>
-                            <input type='text' name='imageUrl' id='imageUrl' className={styles.input} autoComplete="on" placeholder='Profile Picture' />
+            //                 <label htmlFor='imageUrl'>Profile Picture</label>
+            //                 <input type='text' name='imageUrl' id='imageUrl' className={styles.input} autoComplete="on" placeholder='Profile Picture' />
                             
-                            <input type='submit' value='Register' className={styles.registerSubmit} />
-                        </form>
-                    </div>
-                </div>
-            )
+            //                 <input type='submit' value='Register' className={styles.registerSubmit} />
+            //             </form>
+            //         </div>
+            //     </div>
+            // )
 
 
         }
@@ -100,10 +100,7 @@ class Register extends React.Component {
             <div className={styles.register}>
                 <div className={styles.registerInner}>
                     <h1>Register</h1>
-
-                    {/* <div display='none' className={this.state.className}>
-                        <p>asdasdasd{this.state.data.errorMsg}</p>
-                    </div> */}
+                    {this.state.error ? <Error error={this.state.error} /> : null} 
                     <form className={styles.registerForm} onSubmit={this.handleRegister}>
                         <label htmlFor='username'>Username</label>
                         <input type='text' name='username' id='username' className={styles.input} autoComplete="on" placeholder='Username' />

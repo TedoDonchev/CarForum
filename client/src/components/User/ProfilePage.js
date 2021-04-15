@@ -64,7 +64,9 @@ class ProfilePage extends Component {
                 <div className={styles.profileMain}>
                     {this.renderUser()}             
                     <div className={styles.articles}>
-                        {this.renderArticles()}
+                        <h3>Articles</h3>
+                        {this.state.articles.length ? this.renderArticles() : 'User has no articles currently!'}
+                        {/* {this.renderArticles()} */}
                     </div>
                 </div>
             </div>

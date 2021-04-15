@@ -60,31 +60,32 @@ class Login extends Component {
             return <Redirect to="/" />
         }
 
-        if (this.state.error) {
-            return (
-                <div className={styles.register}>
-                    <div className={styles.registerInner}>
-                        <h1>Login</h1>
-                        <Error error={this.state.error} />
-                        <form className={styles.registerForm} onSubmit={this.handleLogin}>
-                            <label htmlFor='username'>Username</label>
-                            <input type='text' name='username' id='username' className={styles.input} placeholder='Username' />
+        // if (this.state.error) {
+        //     return (
+        //         <div className={styles.register}>
+        //             <div className={styles.registerInner}>
+        //                 <h1>Login</h1>
+        //                 <Error error={this.state.error} />
+        //                 <form className={styles.registerForm} onSubmit={this.handleLogin}>
+        //                     <label htmlFor='username'>Username</label>
+        //                     <input type='text' name='username' id='username' className={styles.input} placeholder='Username' />
 
-                            <label htmlFor='password'>Password</label>
-                            <input type='password' name='password' id='password' className={styles.input} placeholder='Password' />
+        //                     <label htmlFor='password'>Password</label>
+        //                     <input type='password' name='password' id='password' className={styles.input} placeholder='Password' />
 
-                            <input type='submit' value='Login' className={styles.registerSubmit} />
-                        </form>
-                    </div>
-                </div>
-            )
-        }
+        //                     <input type='submit' value='Login' className={styles.registerSubmit} />
+        //                 </form>
+        //             </div>
+        //         </div>
+        //     )
+        // }
 
 
         return (
             <div className={styles.register}>
                 <div className={styles.registerInner}>
                     <h1>Login</h1>
+                    {this.state.error ? <Error error={this.state.error} /> : null}
                     <form className={styles.registerForm} onSubmit={this.handleLogin}>
                         <label htmlFor='username'>Username</label>
                         <input type='text' name='username' id='username' className={styles.input}  placeholder='Username' />
