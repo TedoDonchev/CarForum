@@ -12,6 +12,7 @@ import Logout from './components/Authentication/Logout';
 import CreateArticle from './components/Create/CreateArticle';
 import Details from './components/Article/Details';
 import ProfilePage from './components/User/ProfilePage';
+//import EditArticle from './components/Create/Edit';
 
 class App extends React.Component {
     constructor(props) {
@@ -54,10 +55,12 @@ class App extends React.Component {
 
                         <Route path='/' exact component={Home}></Route>
                         <Route path='/about' exact component={About}></Route>
-                        <Route path='/logout' exact component={() => (<Logout logout={this.logout} />)}></Route>
+                        <Route path='/logout' exact component={() => (<Logout logout={this.logout}/>)}></Route>
                         <Route path='/create' exact component={CreateArticle}></Route>
                         <Route path='/articles/:id' component={Details}></Route>
                         <Route path='/users/:id' component={ProfilePage}></Route>
+                        {/* <Route path='/articles/edit/:id' component={EditArticle}></Route> */}
+
 
                     </Switch>
                     <Footer />

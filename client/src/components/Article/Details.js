@@ -1,7 +1,8 @@
 import styles from './Details.module.css';
 import { Component } from 'react';
 import Comment from './Comment';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link, Route } from 'react-router-dom';
+import EditArticle from '../Create/Edit';
 
 class Details extends Component {
     constructor(props) {
@@ -83,8 +84,10 @@ class Details extends Component {
 
     }
 
+    
     render() {
         //console.log(this.props);
+
         if(this.state.redirect) {
             return <Redirect to='/' />
         }
@@ -95,7 +98,16 @@ class Details extends Component {
                     <div className={styles.upperDiv}>
                         <div className={styles.titleDiv}>
                             <h3>{this.state.title}</h3>
-                            {this.state.authorName == localStorage.getItem('username') ? <input type='submit' value='Delete' onClick={this.handleDelete} /> : null}
+                            <div className={styles.buttonDiv}>
+                                {this.state.authorName == localStorage.getItem('username') ? <input className={styles.deleteBtn} type='submit' value='Delete' onClick={this.handleDelete} /> : null}
+                                {this.state.authorName == localStorage.getItem('username') ?
+                                        <div>
+                                            <Route path='/articles/edit/:articleId' component={() => <EditArticle id={`${this.state.articleId}`} title={this.state.title} text={this.state.text} carBrand={this.state.carBrand} />}></Route>
+                                            <Link to={`/articles/edit/${this.state.articleId}`} className={styles.editLink}><input type='submit' value='Edit' className={styles.editButton}/></Link> 
+                                        </div>
+                                        : null
+                                }
+                            </div>
                         </div>
                         <div className={styles.userCarBrand}>
                             <div>From: {this.state.authorName}</div>

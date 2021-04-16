@@ -33,7 +33,7 @@
     font-size: 20px;
 }
 
-.titleDiv input {
+.deleteBtn {
     display: inline;
     margin-right: 0;
     margin-left: 85%;
@@ -41,15 +41,41 @@
     width: 15%;
     background-color: red;
     color: white ;
-    border: 1px solid black;
+    border: 1px solid white;
+    border-radius: 50px;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.deleteBtn:hover {
+    background-color: white;
+    color: red;
+    border: 1px solid red;
+}
+
+.editLink {
+    text-decoration: none;
+}
+
+
+
+.editButton {
+    display: inline;
+    margin-right: 0;
+    margin-left: 85%;
+    margin-top: 5px;
+    width: 15%;
+    background-color: #419128;
+    color: white ;
+    border: 1px solid white;
     border-radius: 50px;
     font-size: 16px;
 }
 
-.titleDiv input:hover {
+.editButton:hover {
     background-color: white;
-    color: red;
-    border: 1px solid red;
+    color: #419128 ;
+    border: 1px solid #419128;
 }
 
 
