@@ -91,7 +91,6 @@ router.post('/edit/:id', async (req, res) => {
         }
     })
 
-
     //console.log(user.articles);
     await User.findByIdAndUpdate({ _id: authorId }, { articles: user.articles }, { new: true });
     res.status(200).send(JSON.stringify(article));
