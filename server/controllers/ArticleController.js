@@ -76,7 +76,26 @@ router.post('/edit/:id', async (req, res) => {
     const { _id, title, text, carBrand } = req.body;
 
     const article = await Article.findOneAndUpdate({ _id: _id }, { title: title, text: text, carBrand: carBrand }, { new: true });
+
+    const { authorId } = article;
+    //console.log(authorId);
+
+
+    let user = await User.findOne({ _id: authorId });
+
+    user.articles.map((article, index) => {
+        if (article._id == _id) {
+            article.title = title;
+            article.text = text;
+            article.carBrand = carBrand;
+        }
+    })
+
+
+    //console.log(user.articles);
+    await User.findByIdAndUpdate({ _id: authorId }, { articles: user.articles }, { new: true });
     res.status(200).send(JSON.stringify(article));
+
 })
 
 module.exports = router;
